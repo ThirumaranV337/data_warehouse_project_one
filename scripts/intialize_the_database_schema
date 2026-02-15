@@ -1,4 +1,13 @@
-
+/*
+=================================================================
+CREATING THE DATA WARE HOUSE AND SCHEMA 
+=================================================================
+SCRIPT PEROPSE:-
+    It will create the database datawarehouse and the schemas bronze,silver,gold
+-----------------------------------------------------------------
+Warning :-
+   This will delete the Entire dataware house if it exist and create the new 
+*/
 
 
 use master;
