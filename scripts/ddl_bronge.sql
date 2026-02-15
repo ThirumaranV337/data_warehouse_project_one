@@ -2,6 +2,7 @@
 ================================================================================================
 We are going to load the full the data from the csv file source to our data ware house 
 =============================================================================================
+*/
 CREATE OR ALTER PROCEDURE Bronze.load_bronze AS
 BEGIN
    DECLARE @start_time DATETIME,@end_time DATETIME;
