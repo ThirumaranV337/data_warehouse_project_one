@@ -13,16 +13,16 @@ Warning :-
 use master;
 GO
 --DROP AND CREARTE THE NEW DATAWAREHOUSE IF EXISTS 
-IF EXISTS (SELECT 1 FROM sys.database WHERE name="DataWarehouse")
+IF EXISTS (SELECT 1 FROM sys.database WHERE name="data_ware_house")
 BEGIN 
- ALTER Database DataWarehouse SET single_user WITH ROLLBACK IMMEDIATE;
- DROP Database DataWarehouse;
+ ALTER Database data_ware_housee SET single_user WITH ROLLBACK IMMEDIATE;
+ DROP Database data_ware_house;
  END;
 GO
-create database DataWarehouse;
-USE DataWarehouse;
-CREATE SCHEMA Bronze;
+create database data_ware_house;
+USE data_ware_house;
+CREATE SCHEMA bronze;
 GO
-CREATE SCHEMA Silver;
+CREATE SCHEMA silver;
 GO
-CREATE SCHEMA Gold;
+CREATE SCHEMA gold;
