@@ -1,5 +1,18 @@
 /*
-In this store procedure I have created to Full load ETL pipe line for the bronze layer and it also indicate the time taken to insert the data ,it is very optimized  
+=================================================================
+Store Procedure :Load Bronze Layer (Source -> Bronze)
+=================================================================
+Script Purpose :
+      This script load load data into the 'Bronze' schema from external CSV files.
+      It performs the following actions:
+       -Truncates  the bronze tabels before loading data.
+       -uses the 'Bulk Inserr ' command to load data from csv Files to bronze tables .
+Parameters:
+   None.
+   This stored procedure does not accept any parameters or return any values.
+Usage Example:
+   EXEC bronze.load_bronze;
+===================================================================
 */
   
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
