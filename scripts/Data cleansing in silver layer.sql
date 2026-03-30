@@ -28,3 +28,21 @@ from
 ROW_NUMBER() OVER(PARTITION BY cst_id  ORDER BY cst_create_date DESC) as flag_lst
 from bronze.crm_cust_info)t
 where flag_lst=1
+--========================================================================================
+select 
+prd_id,
+prd_key,
+replace(substring(prd_key,1,5),'-','_') as cat_id,
+substring(prd_key,7,len(prd_key)) as prd_key,
+prd_nm,
+isnull(prd_cost,0)as prd_cost,
+
+case when upper(trim(prd_line))='M' then 'Mountain'
+     when upper(trim(prd_line))='R' then 'Road'
+     when upper(trim(prd_line))='S' then 'Other Sales'
+     when upper(trim(prd_line))='T' then 'Touring'
+     ElSe 'N/A'
+end as prd_line,
+prd_start_dt,
+prd_end_dt
+from bronze.crm_prd_info
