@@ -25,3 +25,28 @@ from silver.crm_cust_info
 select Distinct
 cst_marital_status
 from silver.crm_cust_info
+--===================================================================
+--checking the data quality in the crm_prd_info
+--Checking for null or duplicate in the primary key 
+--Exceptation no result 
+Select prd_id
+from bronze.crm_prd_info
+group by prd_id
+Having count(*)>1 or prd_id is Null
+--checking the name of the product 
+--Excepted no result 
+select prd_nm
+from bronze.crm_prd_info
+where prd_nm !=Trim(prd_nm)
+--checking for Null or Negative Number 
+--Excepted no result
+Select prd_cost
+from bronze.crm_prd_info
+where prd_cost  <0 or prd_cost is null 
+--Data standardization
+select Distinct prd_line
+from bronze.crm_prd_info
+--check for invalid date orders 
+select * 
+from bronze.crm_prd_info
+where prd_end_dt<prd_start_dt
