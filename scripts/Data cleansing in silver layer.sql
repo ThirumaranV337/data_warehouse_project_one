@@ -115,5 +115,17 @@ case when Trim(cntry)='DE' then 'GERMANY'
      else trim(cntry)
 END AS cntry
 FROM bronze.erp_loc_a101
+==========================================================================================================
+Insert into silver.erp_PX_CAT_G1V2
+(id,
+cat,
+subcat,
+maintenance)
+select 
+id,
+cat,
+subcat,
+maintenance
+from bronze.erp_PX_CAT_G1V2
 
 
