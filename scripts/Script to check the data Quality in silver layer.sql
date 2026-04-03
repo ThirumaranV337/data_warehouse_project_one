@@ -100,3 +100,14 @@ select distinct cntry
 from silver.erp_loc_a101
 order by cntry
 select * From silver.erp_loc_a101
+/*
+checking the quality of the erp_PX_CAT_G1V2 TABLE 
+*/
+SELECT * FROM erp_PX_CAT_G1V2
+where cat !=trim(cat) or subcat !=Trim(subcat) or maintenance != Trim(maintenance)
+--data standardization 
+select distinct
+subcat,
+cat,
+maintenance
+from silver.erp_PX_CAT_G1V2
