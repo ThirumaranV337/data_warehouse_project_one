@@ -93,3 +93,10 @@ WHERE bdate <'1924-01-01' or bdate >GETDATE()
 --Data Standardization & consistency 
 SELECT DISTINCT gen 
 FROM silver.erp_cust_az12
+/*
+checking the quality of the erp_loc_a101 TABLE 
+*/
+select distinct cntry
+from silver.erp_loc_a101
+order by cntry
+select * From silver.erp_loc_a101
